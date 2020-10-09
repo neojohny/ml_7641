@@ -19,14 +19,22 @@ sys.path.insert(0, os.path.abspath('../'))
 
 # -- Project information -----------------------------------------------------
 
+<<<<<<< HEAD
 project = 'mlrose_hiive'
+=======
+project = 'mlrose'
+>>>>>>> 0cbf9e925d017530bd9b68dea67f81a0d031cdbd
 copyright = '2019, Genevieve Hayes'
 author = 'Genevieve Hayes'
 
 # The short X.Y version
 version = ''
 # The full version, including alpha/beta/rc tags
+<<<<<<< HEAD
 release = '1.2.0'
+=======
+release = '1.3.0'
+>>>>>>> 0cbf9e925d017530bd9b68dea67f81a0d031cdbd
 
 
 # -- General configuration ---------------------------------------------------
@@ -140,7 +148,11 @@ latex_elements = {
 # (source start file, target name, title,
 #  author, documentclass [howto, manual, or own class]).
 latex_documents = [
+<<<<<<< HEAD
     (master_doc, 'mlrose_hiive.tex', 'mlrose_hiive Documentation',
+=======
+    (master_doc, 'mlrose.tex', 'mlrose Documentation',
+>>>>>>> 0cbf9e925d017530bd9b68dea67f81a0d031cdbd
      'Genevieve Hayes', 'manual'),
 ]
 
@@ -150,7 +162,11 @@ latex_documents = [
 # One entry per manual page. List of tuples
 # (source start file, name, description, authors, manual section).
 man_pages = [
+<<<<<<< HEAD
     (master_doc, 'mlrose_hiive', 'mlrose_hiive Documentation',
+=======
+    (master_doc, 'mlrose', 'mlrose Documentation',
+>>>>>>> 0cbf9e925d017530bd9b68dea67f81a0d031cdbd
      [author], 1)
 ]
 
@@ -161,8 +177,13 @@ man_pages = [
 # (source start file, target name, title, author,
 #  dir menu entry, description, category)
 texinfo_documents = [
+<<<<<<< HEAD
     (master_doc, 'mlrose_hiive', 'mlrose_hiive Documentation',
      author, 'mlrose_hiive', 'One line description of project.',
+=======
+    (master_doc, 'mlrose', 'mlrose Documentation',
+     author, 'mlrose', 'One line description of project.',
+>>>>>>> 0cbf9e925d017530bd9b68dea67f81a0d031cdbd
      'Miscellaneous'),
 ]
 

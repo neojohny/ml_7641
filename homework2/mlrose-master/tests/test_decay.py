@@ -3,6 +3,7 @@
 # Author: Genevieve Hayes
 # License: BSD 3 clause
 
+<<<<<<< HEAD
 try:
     import mlrose_hiive
 except:
@@ -10,6 +11,10 @@ except:
     sys.path.append("..")
 import unittest
 from mlrose_hiive import GeomDecay, ArithDecay, ExpDecay, CustomSchedule
+=======
+import unittest
+from mlrose import GeomDecay, ArithDecay, ExpDecay, CustomSchedule
+>>>>>>> 0cbf9e925d017530bd9b68dea67f81a0d031cdbd
 
 
 class TestDecay(unittest.TestCase):

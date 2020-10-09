@@ -3,6 +3,7 @@
 # Author: Genevieve Hayes
 # License: BSD 3 clause
 
+<<<<<<< HEAD
 try:
     import mlrose_hiive
 except:
@@ -12,6 +13,11 @@ except:
 import unittest
 import numpy as np
 from mlrose_hiive.neural.activation import identity, sigmoid, softmax, tanh, relu
+=======
+import unittest
+import numpy as np
+from mlrose.activation import identity, sigmoid, softmax, tanh, relu
+>>>>>>> 0cbf9e925d017530bd9b68dea67f81a0d031cdbd
 # The above functions are not automatically imported at initialization, so
 # must be imported explicitly from activation.py.
 

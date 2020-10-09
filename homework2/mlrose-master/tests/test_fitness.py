@@ -3,6 +3,7 @@
 # Author: Genevieve Hayes
 # License: BSD 3 clause
 
+<<<<<<< HEAD
 try:
     import mlrose_hiive
 except:
@@ -18,6 +19,16 @@ from mlrose_hiive import (OneMax, FlipFlop, FourPeaks, SixPeaks, ContinuousPeaks
 # The above functions are not automatically imported at initialization, so
 # must be imported explicitly from fitness.py.
 from mlrose_hiive.fitness._discrete_peaks_base import _DiscretePeaksBase
+=======
+import unittest
+import numpy as np
+from mlrose import (OneMax, FlipFlop, FourPeaks, SixPeaks, ContinuousPeaks,
+                    Knapsack, TravellingSales, Queens, MaxKColor,
+                    CustomFitness)
+from mlrose.fitness import head, tail, max_run
+# The above functions are not automatically imported at initialization, so
+# must be imported explicitly from fitness.py.
+>>>>>>> 0cbf9e925d017530bd9b68dea67f81a0d031cdbd
 
 
 class TestFitness(unittest.TestCase):
@@ -39,34 +50,54 @@ class TestFitness(unittest.TestCase):
     def test_head():
         """Test head function"""
         state = np.array([1, 1, 1, 1, 0, 1, 0, 2, 1, 1, 1, 1, 1, 4, 6, 1, 1])
+<<<<<<< HEAD
         assert _DiscretePeaksBase.head(1, state) == 4
+=======
+        assert head(1, state) == 4
+>>>>>>> 0cbf9e925d017530bd9b68dea67f81a0d031cdbd
 
     @staticmethod
     def test_tail():
         """Test tail function"""
         state = np.array([1, 1, 1, 1, 0, 1, 0, 2, 1, 1, 1, 1, 1, 4, 6, 1, 1])
+<<<<<<< HEAD
         assert _DiscretePeaksBase.tail(1, state) == 2
+=======
+        assert tail(1, state) == 2
+>>>>>>> 0cbf9e925d017530bd9b68dea67f81a0d031cdbd
 
     @staticmethod
     def test_max_run_middle():
         """Test max_run function for case where run is in the middle of the
         state"""
         state = np.array([1, 1, 1, 1, 0, 1, 0, 2, 1, 1, 1, 1, 1, 4, 6, 1, 1])
+<<<<<<< HEAD
         assert ContinuousPeaks.max_run(1, state) == 5
+=======
+        assert max_run(1, state) == 5
+>>>>>>> 0cbf9e925d017530bd9b68dea67f81a0d031cdbd
 
     @staticmethod
     def test_max_run_start():
         """Test max_run function for case where run is at the start of the
         state"""
         state = np.array([1, 1, 1, 1, 1, 1, 0, 2, 1, 1, 1, 1, 1, 4, 6, 1, 1])
+<<<<<<< HEAD
         assert ContinuousPeaks.max_run(1, state) == 6
+=======
+        assert max_run(1, state) == 6
+>>>>>>> 0cbf9e925d017530bd9b68dea67f81a0d031cdbd
 
     @staticmethod
     def test_max_run_end():
         """Test max_run function for case where run is at the end of the
         state"""
         state = np.array([1, 1, 1, 1, 0, 1, 0, 2, 1, 1, 1, 1, 1, 1, 1, 1, 1])
+<<<<<<< HEAD
         assert ContinuousPeaks.max_run(1, state) == 9
+=======
+        assert max_run(1, state) == 9
+>>>>>>> 0cbf9e925d017530bd9b68dea67f81a0d031cdbd
 
     @staticmethod
     def test_fourpeaks_r0():
@@ -105,10 +136,18 @@ class TestFitness(unittest.TestCase):
         assert SixPeaks(t_pct=0.30).evaluate(state) == 0
 
     @staticmethod
+<<<<<<< HEAD
     def test_sixpeaks_r_gt0_max0():
         """Test SixPeaks fitness function for the case where R>0 and max=0"""
         state = np.array([0, 0, 0, 1, 0, 1, 1, 0, 1, 1, 1, 1])
         assert SixPeaks(t_pct=0.15).evaluate(state) == 12
+=======
+    def test_sixpeaks_r_gt0_max2():
+        """Test SixPeaks fitness function for the case where R>0 and max>0
+        based on the second condition"""
+        state = np.array([0, 0, 0, 1, 0, 1, 1, 0, 1, 1, 1, 1])
+        assert SixPeaks(t_pct=0.15).evaluate(state) == 16
+>>>>>>> 0cbf9e925d017530bd9b68dea67f81a0d031cdbd
 
     @staticmethod
     def test_continuouspeaks_r0():
@@ -132,8 +171,12 @@ class TestFitness(unittest.TestCase):
         max_weight_pct = 0.6
 
         state = np.array([1, 0, 2, 1, 0])
+<<<<<<< HEAD
         calculated_weights = Knapsack(weights, values, max_weight_pct).evaluate(state)
         assert calculated_weights == 11
+=======
+        assert Knapsack(weights, values, max_weight_pct).evaluate(state) == 11
+>>>>>>> 0cbf9e925d017530bd9b68dea67f81a0d031cdbd
 
     @staticmethod
     def test_knapsack_weight_gt_max():
@@ -185,8 +228,12 @@ class TestFitness(unittest.TestCase):
     def test_queens():
         """Test Queens fitness function"""
         state = np.array([1, 4, 1, 3, 5, 5, 2, 7])
+<<<<<<< HEAD
         fitness = Queens().evaluate(state)
         assert fitness == 6
+=======
+        assert Queens().evaluate(state) == 6
+>>>>>>> 0cbf9e925d017530bd9b68dea67f81a0d031cdbd
 
     @staticmethod
     def test_max_k_color():

@@ -1,7 +1,10 @@
 """ MLROSe setup file."""
 
 # Author: Genevieve Hayes
+<<<<<<< HEAD
 # Modified: Andrew Rollings
+=======
+>>>>>>> 0cbf9e925d017530bd9b68dea67f81a0d031cdbd
 # License: BSD 3 clause
 
 from setuptools import setup
@@ -15,6 +18,7 @@ def readme():
         return _file.read()
 
 
+<<<<<<< HEAD
 setup(name='mlrose_hiive',
       version='2.1.3',
       description="MLROSe: Machine Learning, Randomized Optimization and"
@@ -25,6 +29,17 @@ setup(name='mlrose_hiive',
       author='Genevieve Hayes (modified by Andrew Rollings)',
       license='BSD',
       download_url='https://github.com/hiive/mlrose/archive/2.1.3.tar.gz',
+=======
+setup(name='mlrose',
+      version='1.3.0',
+      description="MLROSe: Machine Learning, Randomized Optimization and"
+      + " Search",
+      long_description=readme(),
+      long_description_content_type='text/markdown',
+      url='https://github.com/gkhayes/mlrose',
+      author='Genevieve Hayes',
+      license='BSD',
+>>>>>>> 0cbf9e925d017530bd9b68dea67f81a0d031cdbd
       classifiers=[
           "Intended Audience :: Education",
           "Intended Audience :: Science/Research",
@@ -37,6 +52,7 @@ setup(name='mlrose_hiive',
           "Topic :: Scientific/Engineering :: Mathematics",
           "Topic :: Software Development :: Libraries",
           "Topic :: Software Development :: Libraries :: Python Modules"],
+<<<<<<< HEAD
       packages=['mlrose_hiive','mlrose_hiive.runners','mlrose_hiive.generators', 'mlrose_hiive.algorithms',
                 'mlrose_hiive.algorithms.decay', 'mlrose_hiive.algorithms.crossovers',
                 'mlrose_hiive.opt_probs', 'mlrose_hiive.fitness', 'mlrose_hiive.algorithms.mutators',
@@ -44,5 +60,9 @@ setup(name='mlrose_hiive',
                 'mlrose_hiive.neural.utils', 'mlrose_hiive.decorators',
                 'mlrose_hiive.gridsearch'],
       install_requires=['numpy', 'scipy', 'scikit-learn', 'pandas', 'networkx', 'joblib'],
+=======
+      packages=['mlrose'],
+      install_requires=['numpy', 'scipy', 'sklearn'],
+>>>>>>> 0cbf9e925d017530bd9b68dea67f81a0d031cdbd
       python_requires='>=3',
       zip_safe=False)

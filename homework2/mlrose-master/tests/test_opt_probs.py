@@ -2,20 +2,28 @@
 
 # Author: Genevieve Hayes
 # License: BSD 3 clause
+<<<<<<< HEAD
 try:
     import mlrose_hiive
 except:
     import sys
     sys.path.append("..")
+=======
+>>>>>>> 0cbf9e925d017530bd9b68dea67f81a0d031cdbd
 
 import unittest
 import numpy as np
 
+<<<<<<< HEAD
 from mlrose_hiive import OneMax, DiscreteOpt, ContinuousOpt, TSPOpt, OnePointCrossOver
+=======
+from mlrose import OneMax, DiscreteOpt, ContinuousOpt, TSPOpt
+>>>>>>> 0cbf9e925d017530bd9b68dea67f81a0d031cdbd
 
 # The following functions/classes are not automatically imported at
 # initialization, so must be imported explicitly from neural.py,
 # activation.py and opt_probs.py
+<<<<<<< HEAD
 from mlrose_hiive.neural import NetworkWeights
 from mlrose_hiive.neural.activation import identity
 from mlrose_hiive.opt_probs._opt_prob import _OptProb as OptProb
@@ -23,6 +31,15 @@ from mlrose_hiive.opt_probs._opt_prob import _OptProb as OptProb
 
 class TestOptProb(unittest.TestCase):
     """Tests for _OptProb class."""
+=======
+from mlrose.neural import NetworkWeights
+from mlrose.activation import identity
+from mlrose.opt_probs import OptProb
+
+
+class TestOptProb(unittest.TestCase):
+    """Tests for OptProb class."""
+>>>>>>> 0cbf9e925d017530bd9b68dea67f81a0d031cdbd
 
     @staticmethod
     def test_set_state_max():
@@ -212,6 +229,7 @@ class TestOptProb(unittest.TestCase):
         assert np.allclose(problem.get_mate_probs(), probs, atol=0.00001)
 
     @staticmethod
+<<<<<<< HEAD
     def test_eval_mate_probs_maximize_false():
         """Test eval_mate_probs method"""
 
@@ -231,6 +249,8 @@ class TestOptProb(unittest.TestCase):
         assert np.allclose(problem.get_mate_probs(), probs, atol=0.00001)
 
     @staticmethod
+=======
+>>>>>>> 0cbf9e925d017530bd9b68dea67f81a0d031cdbd
     def test_eval_mate_probs_all_zero():
         """Test eval_mate_probs method when all states have zero fitness"""
 
@@ -449,7 +469,11 @@ class TestDiscreteOpt(unittest.TestCase):
 
         child = problem.reproduce(father, mother, mutation_prob=0)
 
+<<<<<<< HEAD
         assert (len(child) == 5 and sum(child) > 0 and sum(child) <= 5)
+=======
+        assert (len(child) == 5 and sum(child) > 0 and sum(child) < 5)
+>>>>>>> 0cbf9e925d017530bd9b68dea67f81a0d031cdbd
 
     @staticmethod
     def test_reproduce_mut1_max2():
@@ -461,18 +485,26 @@ class TestDiscreteOpt(unittest.TestCase):
 
         child = problem.reproduce(father, mother, mutation_prob=1)
 
+<<<<<<< HEAD
         assert (len(child) == 5 and sum(child) > 0 and sum(child) <= 5)
+=======
+        assert (len(child) == 5 and sum(child) > 0 and sum(child) < 5)
+>>>>>>> 0cbf9e925d017530bd9b68dea67f81a0d031cdbd
 
     @staticmethod
     def test_reproduce_mut1_max_gt2():
         """Test reproduce method when mutation_prob is 1 and max_val is
         greater than 2"""
 
+<<<<<<< HEAD
         problem = DiscreteOpt(5, OneMax(),
                               maximize=True,
                               max_val=3)
         problem._crossover = OnePointCrossOver(problem)
 
+=======
+        problem = DiscreteOpt(5, OneMax(), maximize=True, max_val=3)
+>>>>>>> 0cbf9e925d017530bd9b68dea67f81a0d031cdbd
         father = np.array([0, 0, 0, 0, 0])
         mother = np.array([2, 2, 2, 2, 2])
 

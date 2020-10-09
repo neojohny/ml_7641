@@ -28,9 +28,15 @@ At the time of development, there did not exist a single Python package that col
 ## Installation
 mlrose was written in Python 3 and requires NumPy, SciPy and Scikit-Learn (sklearn).
 
+<<<<<<< HEAD
 The latest version can be installed using `pip`:
 ```
 pip install mlrose-hiive
+=======
+The latest released version is available at the [Python package index](https://pypi.org/project/mlrose/) and can be installed using `pip`:
+```
+pip install mlrose
+>>>>>>> 0cbf9e925d017530bd9b68dea67f81a0d031cdbd
 ```
 
 ## Documentation
@@ -42,6 +48,7 @@ A Jupyter notebook containing the examples used in the documentation is also ava
 mlrose was written by Genevieve Hayes and is distributed under the [3-Clause BSD license](https://github.com/gkhayes/mlrose/blob/master/LICENSE). 
 
 You can cite mlrose in research publications and reports as follows:
+<<<<<<< HEAD
 * Rollings, A. (2020). ***mlrose: Machine Learning, Randomized Optimization and SEarch package for Python, hiive extended remix***. https://github.com/hiive/mlrose. Accessed: *day month year*.
 
 Please also keep the original author's citation:
@@ -51,6 +58,10 @@ You can cite this fork in a similar way, but please be sure to reference the ori
 Thanks to David S. Park for the MIMIC enhancements (from https://github.com/parkds/mlrose).
 
 
+=======
+* Hayes, G. (2019). ***mlrose: Machine Learning, Randomized Optimization and SEarch package for Python***. https://github.com/gkhayes/mlrose. Accessed: *day month year*.
+
+>>>>>>> 0cbf9e925d017530bd9b68dea67f81a0d031cdbd
 BibTeX entry:
 ```
 @misc{Hayes19,
@@ -60,6 +71,7 @@ BibTeX entry:
  howpublished = {\url{https://github.com/gkhayes/mlrose}},
  note 	= {Accessed: day month year}
 }
+<<<<<<< HEAD
 
 @misc{Rollings20,
  author = {Rollings, A.},
@@ -68,4 +80,6 @@ BibTeX entry:
  howpublished = {\url{https://github.com/hiive/mlrose}},
  note 	= {Accessed: day month year}
 }
+=======
+>>>>>>> 0cbf9e925d017530bd9b68dea67f81a0d031cdbd
 ```

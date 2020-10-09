@@ -1,6 +1,10 @@
 __pycache__/*
 tests/__pycache__/*
+<<<<<<< HEAD
 mlrose_hiive/__pycache__/*
+=======
+mlrose/__pycache__/*
+>>>>>>> 0cbf9e925d017530bd9b68dea67f81a0d031cdbd
 
 build/*
 mlrose.egg-info/*
@@ -9,7 +13,10 @@ docs/_build/*
 docs/_static/*
 docs/_templates/*
 .vscode/settings.json
+<<<<<<< HEAD
 tsp_test/*
 mlrose_hiive.egg-info/*
 venvp/
 /.idea/
+=======
+>>>>>>> 0cbf9e925d017530bd9b68dea67f81a0d031cdbd

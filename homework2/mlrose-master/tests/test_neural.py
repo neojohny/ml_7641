@@ -3,16 +3,20 @@
 # Author: Genevieve Hayes
 # License: BSD 3 clause
 
+<<<<<<< HEAD
 try:
     import mlrose_hiive
 except:
     import sys
     sys.path.append("..")
+=======
+>>>>>>> 0cbf9e925d017530bd9b68dea67f81a0d031cdbd
 import unittest
 import numpy as np
 # The following functions/classes are not automatically imported at
 # initialization, so must be imported explicitly from neural.py and
 # activation.py.
+<<<<<<< HEAD
 from mlrose_hiive.neural.linear_regression import LinearRegression
 from mlrose_hiive.neural.logistic_regression import LogisticRegression
 from mlrose_hiive.neural.fitness.network_weights import NetworkWeights
@@ -20,6 +24,12 @@ from mlrose_hiive.neural.neural_network import NeuralNetwork
 from mlrose_hiive.opt_probs import ContinuousOpt
 from mlrose_hiive import (flatten_weights, unflatten_weights, identity, sigmoid, softmax)
 from mlrose_hiive.algorithms.gd import gradient_descent
+=======
+from mlrose.neural import (flatten_weights, unflatten_weights,
+                           gradient_descent, NetworkWeights, ContinuousOpt,
+                           NeuralNetwork, LogisticRegression, LinearRegression)
+from mlrose.activation import identity, sigmoid, softmax
+>>>>>>> 0cbf9e925d017530bd9b68dea67f81a0d031cdbd
 
 
 class TestNeural(unittest.TestCase):
@@ -87,9 +97,15 @@ class TestNeural(unittest.TestCase):
                                 min_val=-1, max_val=1, step=0.1)
 
         test_weights = np.array([1, 1, 1, 1, 1, 1, 1, 1, 1, 1])
+<<<<<<< HEAD
         test_fitness = -1 * problem.eval_fitness(test_weights)
 
         best_state, best_fitness, _ = gradient_descent(problem)
+=======
+        test_fitness = -1*problem.eval_fitness(test_weights)
+
+        best_state, best_fitness = gradient_descent(problem)
+>>>>>>> 0cbf9e925d017530bd9b68dea67f81a0d031cdbd
 
         assert (len(best_state) == 10 and min(best_state) >= -1
                 and max(best_state) <= 1 and best_fitness < test_fitness)
@@ -119,8 +135,13 @@ class TestNeural(unittest.TestCase):
 
         init_weights = np.array([1, 1, 1, 1, 1, 1, 1, 1, 1, 1])
 
+<<<<<<< HEAD
         best_state, best_fitness, _ = gradient_descent(problem, max_iters=1,
                                                        init_state=init_weights)
+=======
+        best_state, best_fitness = gradient_descent(problem, max_iters=1,
+                                                    init_state=init_weights)
+>>>>>>> 0cbf9e925d017530bd9b68dea67f81a0d031cdbd
 
         x = np.array([-0.7, -0.7, -0.9, -0.9, -0.9, -0.9, -1, -1, -1, -1])
 
@@ -150,7 +171,11 @@ class TestNeuralWeights(unittest.TestCase):
                                  bias=False)
 
         a = list(np.arange(8) + 1)
+<<<<<<< HEAD
         b = list(0.01 * (np.arange(2) + 1))
+=======
+        b = list(0.01*(np.arange(2) + 1))
+>>>>>>> 0cbf9e925d017530bd9b68dea67f81a0d031cdbd
 
         weights = a + b
 
@@ -181,7 +206,11 @@ class TestNeuralWeights(unittest.TestCase):
                                  bias=False)
 
         a = list(np.arange(8) + 1)
+<<<<<<< HEAD
         b = list(0.01 * (np.arange(4) + 1))
+=======
+        b = list(0.01*(np.arange(4) + 1))
+>>>>>>> 0cbf9e925d017530bd9b68dea67f81a0d031cdbd
 
         weights = a + b
 
@@ -206,7 +235,11 @@ class TestNeuralWeights(unittest.TestCase):
                                  bias=False, is_classifier=False)
 
         a = list(np.arange(8) + 1)
+<<<<<<< HEAD
         b = list(0.01 * (np.arange(2) + 1))
+=======
+        b = list(0.01*(np.arange(2) + 1))
+>>>>>>> 0cbf9e925d017530bd9b68dea67f81a0d031cdbd
 
         weights = a + b
 
@@ -231,7 +264,11 @@ class TestNeuralWeights(unittest.TestCase):
                                  bias=True, is_classifier=False)
 
         a = list(np.arange(10) + 1)
+<<<<<<< HEAD
         b = list(0.01 * (np.arange(2) + 1))
+=======
+        b = list(0.01*(np.arange(2) + 1))
+>>>>>>> 0cbf9e925d017530bd9b68dea67f81a0d031cdbd
 
         weights = a + b
 
@@ -257,7 +294,11 @@ class TestNeuralWeights(unittest.TestCase):
                                  learning_rate=1)
 
         a = list(np.arange(8) + 1)
+<<<<<<< HEAD
         b = list(0.01 * (np.arange(2) + 1))
+=======
+        b = list(0.01*(np.arange(2) + 1))
+>>>>>>> 0cbf9e925d017530bd9b68dea67f81a0d031cdbd
 
         weights = a + b
         fitness.evaluate(weights)
