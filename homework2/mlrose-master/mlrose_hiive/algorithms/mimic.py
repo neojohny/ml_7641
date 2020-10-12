@@ -5,6 +5,7 @@
 # License: BSD 3 clause
 
 import numpy as np
+import time
 
 from mlrose_hiive.decorators import short_name
 
@@ -92,6 +93,8 @@ def mimic(problem, pop_size=200, keep_pct=0.2, max_attempts=10,
         np.random.seed(random_state)
 
     fitness_curve = []
+    #start_time = time.time()
+    time_curve = []
 
     # Initialize problem, population and attempts counter
     problem.reset()
@@ -106,6 +109,7 @@ def mimic(problem, pop_size=200, keep_pct=0.2, max_attempts=10,
     attempts = 0
     iters = 0
 
+    start_time = time.time()
     continue_iterating = True
     while (attempts < max_attempts) and (iters < max_iters):
         iters += 1
@@ -135,6 +139,8 @@ def mimic(problem, pop_size=200, keep_pct=0.2, max_attempts=10,
 
         if curve:
             fitness_curve.append(problem.get_adjusted_fitness())
+            time_curve.append(time.time() - start_time)
+
 
         # invoke callback
         if state_fitness_callback is not None:
@@ -154,6 +160,6 @@ def mimic(problem, pop_size=200, keep_pct=0.2, max_attempts=10,
     best_state = problem.get_state().astype(int)
 
     if curve:
-        return best_state, best_fitness, np.asarray(fitness_curve)
+        return best_state, best_fitness, np.asarray(fitness_curve), np.asarray(time_curve)
 
     return best_state, best_fitness, None

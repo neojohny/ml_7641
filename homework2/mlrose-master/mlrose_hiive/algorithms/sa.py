@@ -5,9 +5,11 @@
 # License: BSD 3 clause
 
 import numpy as np
+import time
 
 from mlrose_hiive.algorithms.decay import GeomDecay
 from mlrose_hiive.decorators import short_name
+
 
 
 @short_name('sa')
@@ -89,6 +91,9 @@ def simulated_annealing(problem, schedule=GeomDecay(), max_attempts=10,
                                user_data=callback_user_info)
 
     fitness_curve = []
+    start_time = time.time()
+    time_curve = []
+
 
     attempts = 0
     iters = 0
@@ -121,6 +126,7 @@ def simulated_annealing(problem, schedule=GeomDecay(), max_attempts=10,
 
         if curve:
             fitness_curve.append(problem.get_adjusted_fitness())
+            time_curve.append(time.time() - start_time)
 
         # invoke callback
         if state_fitness_callback is not None:
@@ -141,6 +147,6 @@ def simulated_annealing(problem, schedule=GeomDecay(), max_attempts=10,
     best_state = problem.get_state()
 
     if curve:
-        return best_state, best_fitness, np.asarray(fitness_curve)
+        return best_state, best_fitness, np.asarray(fitness_curve), np.asarray(time_curve)
 
     return best_state, best_fitness, None
