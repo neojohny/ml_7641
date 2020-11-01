@@ -9,10 +9,12 @@ from matplotlib import pyplot as plt
 
 
 #range_n_clusters = [2, 4,  6,8]
-def silhouette(X_stan,range_n_clusters = [2, 4,  6,8],columns=[0,1]):
+def silhouette(X_stan,range_n_clusters = [2, 4,  6,8],columns=[0,1],visual=True):
     for n_clusters in range_n_clusters:
         # Create a subplot with 1 row and 2 columns
-        fig, (ax1, ax2) = plt.subplots(1, 2)
+        if visual:
+            fig, (ax1, ax2) = plt.subplots(1, 2)
+        fig, ax1 = plt.subplots(1, 1)
         fig.set_size_inches(18, 7)
         # The 1st subplot is the silhouette plot
         # The silhouette coefficient can range from -1, 1 but in this example all
@@ -71,23 +73,25 @@ def silhouette(X_stan,range_n_clusters = [2, 4,  6,8],columns=[0,1]):
         ax1.set_xticks([-0.1, 0, 0.2, 0.4, 0.6, 0.8, 1])
 
         # 2nd Plot showing the actual clusters formed
-        colors = cm.nipy_spectral(cluster_labels.astype(float) / n_clusters)
-        ax2.scatter(X_stan[:, columns[0]], X_stan[:, columns[1]], marker='.', s=30, lw=0, alpha=0.7,
-                    c=colors, edgecolor='k')
+        if visual:
+            colors = cm.nipy_spectral(cluster_labels.astype(float) / n_clusters)
 
-        # Labeling the clusters
-        centers = clusterer.cluster_centers_
-        # Draw white circles at cluster centers
-        ax2.scatter(centers[:, columns[0]], centers[:, columns[1]], marker='o',
-                    c="white", alpha=1, s=200, edgecolor='k')
+            ax2.scatter(X_stan[:, columns[0]], X_stan[:, columns[1]], marker='.', s=30, lw=0, alpha=0.7,
+                        c=colors, edgecolor='k')
 
-        for i, c in enumerate(centers):
-            ax2.scatter(c[columns[0]], c[columns[1]], marker='$%d$' % i, alpha=1,
-                        s=50, edgecolor='k')
+            # Labeling the clusters
+            centers = clusterer.cluster_centers_
+            # Draw white circles at cluster centers
+            ax2.scatter(centers[:, columns[0]], centers[:, columns[1]], marker='o',
+                        c="white", alpha=1, s=200, edgecolor='k')
 
-        ax2.set_title("The visualization of the clustered data.")
-        ax2.set_xlabel("Feature space for the 1st feature")
-        ax2.set_ylabel("Feature space for the 2nd feature")
+            for i, c in enumerate(centers):
+                ax2.scatter(c[columns[0]], c[columns[1]], marker='$%d$' % i, alpha=1,
+                            s=50, edgecolor='k')
+
+            ax2.set_title("The visualization of the clustered data.")
+            ax2.set_xlabel("Feature space for the 1st feature")
+            ax2.set_ylabel("Feature space for the 2nd feature")
 
         plt.suptitle(("Silhouette analysis for KMeans clustering on sample data "
                     "with n_clusters = %d" % n_clusters),
