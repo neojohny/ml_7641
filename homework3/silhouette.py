@@ -12,9 +12,9 @@ from matplotlib import pyplot as plt
 def silhouette(X_stan,range_n_clusters = [2, 4,  6,8],columns=[0,1],visual=True):
     for n_clusters in range_n_clusters:
         # Create a subplot with 1 row and 2 columns
-        if visual:
-            fig, (ax1, ax2) = plt.subplots(1, 2)
-        fig, ax1 = plt.subplots(1, 1)
+        #if visual:
+        fig, (ax1, ax2) = plt.subplots(1, 2)
+        #fig, ax1 = plt.subplots(1, 1)
         fig.set_size_inches(18, 7)
         # The 1st subplot is the silhouette plot
         # The silhouette coefficient can range from -1, 1 but in this example all
